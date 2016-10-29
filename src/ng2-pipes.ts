@@ -58,9 +58,11 @@ export class SubStringPipe implements PipeTransform {
   }
 }
 
-export var NG2PIPES = [
-  CapitalizePipe,
-  ToFixedPipe,
-  TotalPipe,
-  SubStringPipe,
-];
+@Pipe({name: 'qoute'})
+export class QoutePipe implements PipeTransform {
+  transform(value: any, args: any[]): any {
+    if (!value) return value;
+
+    return '"' + value.toString() + '"';
+  }
+}

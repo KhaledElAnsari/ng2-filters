@@ -1,6 +1,6 @@
 {
   "name": "ng2-filters",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "pipes (filters) for angular 2 templates",
   "main": "index.js",
   "typings": "./index.d.ts",
@@ -39,5 +39,13 @@
     "templates"
   ],
   "author": "Khaled Al-Ansari <khaledelansari@gmail.com> (http://khaledelansari.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhaledElAnsari/ng2-filters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KhaledElAnsari/ng2-filters/issues"
+  },
+  "homepage": "https://github.com/KhaledElAnsari/ng2-filters#readme"
 }
