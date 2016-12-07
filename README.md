@@ -61,5 +61,9 @@ Here's a list of availabe pipes:
 
   - `qoute`: it will add a qoutation mark to the value (It will turn the given value into a `String`)
 
+  - `replace`: this pipe will the replace the first matching string, example: `{{ timestring | replace: 'T': ' ' }}`. Note: Default replace value is empty string `""`.
+
+  - `replaceAll`: work like `replace` but the difference that it will replace every matching string.
+
 # License
 This project is under the MIT license.
