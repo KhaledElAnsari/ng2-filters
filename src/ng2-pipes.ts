@@ -66,3 +66,22 @@ export class QoutePipe implements PipeTransform {
     return '"' + value.toString() + '"';
   }
 }
+
+@Pipe({name: 'replace'})
+export class ReplacePipe implements PipeTransform {
+  transform(value: string, replace: string, replacement: string = ""): string {
+    if (!value) return value;
+
+    return value.replace(replace, replacement);
+  }
+}
+
+@Pipe({name: 'replaceAll'})
+export class ReplaceAllPipe implements PipeTransform {
+  transform(value: string, replace: string, replacement: string = ""): string {
+    if (!value) return value;
+    let regex = new RegExp(replace, 'g');
+
+    return value.replace(regex, replacement);
+  }
+}
