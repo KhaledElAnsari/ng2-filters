@@ -15,10 +15,7 @@ export class CapitalizePipe implements PipeTransform {
 @Pipe({name: 'tofixed'})
 export class ToFixedPipe implements PipeTransform {
   transform(value: number, digits: number = 2): any {
-    if (!value) return value;
-
-    if(value.constructor !== Number) throw new Error("tofixed: Value is not Number type");
-    if(digits.constructor !== Number) throw new Error("tofixed: Digits are not Number type");
+    if(!value || isNaN(+value)) return value;
 
     return value.toFixed(digits);
   }
@@ -43,16 +40,9 @@ export class TotalPipe implements PipeTransform {
 @Pipe({name: 'substr'})
 export class SubStringPipe implements PipeTransform {
   transform(value: string, start: number = 0, length: number): any {
-    if (!value) return value;
+    if(!value || typeof value !== "string" || typeof start !== "number") return value;
 
-    if(value.constructor !== String) throw new Error("substr: Value is not String type");
-    if(start.constructor !== Number) throw new Error("substr: Start is not Number type");
-
-    if(length === undefined) {
-      return value.substr(start);
-    }
-
-    if(length.constructor !== Number) throw new Error("substr: Length is not Number type");
+    if(length === undefined || typeof length !== "number") return value.substr(start);
 
     return value.substr(start, length);
   }
